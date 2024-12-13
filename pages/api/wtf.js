@@ -5,7 +5,7 @@ import { stringify } from "flatted";
  * @param {import("next").NextApiResponse} res
  */
 export default async function handler(req, res) {
-  res.status(200).end();
+  res.status(200).json(stringify(req));
 
   const slackResponse = {
     blocks: [
@@ -33,5 +33,5 @@ export default async function handler(req, res) {
     ],
   };
 
-  fetch(req.body.response_url, { method: "POST", body: JSON.stringify(slackResponse) });
+  // fetch(req.body.response_url, { method: "POST", body: JSON.stringify(slackResponse) });
 }
