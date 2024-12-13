@@ -33,5 +33,5 @@ export default async function handler(req, res) {
     ],
   };
 
-  fetch(req.body.response_url, { method: "POST", body: stringify(slackResponse) });
+  fetch(req.body.response_url, { method: "POST", body: JSON.stringify(slackResponse) });
 }
